@@ -1,0 +1,66 @@
+.attached-files-list {
+   
+}
+
+
+
+.list-group-item {
+    background-color: transparent!important;
+    opacity: .85;
+}
+
+.list-group-item:hover {
+    
+    opacity: 1;
+}
+
+.list-group-item:nth-child(odd){
+    background: #f9f9f9!important;
+}
+
+.attached-files-list a::before{
+    content: "pdf ↓";
+    position: absolute;
+    left: 20px;
+    background: #def;
+    text-transform: uppercase;
+    color: #678;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    width: 60px;
+    text-align: center;
+} 
+
+.attached-files-list a{
+    padding: 18px 20px 18px 90px;
+    color: #456;
+}
+
+.attached-files-list a[href$=".pdf"]::before{
+    background: #ffcccc;
+    content: "pdf";
+}
+.attached-files-list a[href$=".xlsx"]::before{
+    background: #ccffcc;
+    content: "xlsx";
+}
+.attached-files-list a[href$=".xls"]::before{
+    background: #ccffcc;
+    content: "xls ↓";
+}
+.attached-files-list a[href$=".docx"]::before{
+    background: #ccffff;
+    content: "docx";
+}
+.attached-files-list a[href$=".doc"]::before{
+    background: #ccffff;
+    content: "doc ↓";
+}
+
+
+.attached-file-extension {
+    position: absolute;
+    right: 20px;
+    color: #456;
+}
