@@ -94,7 +94,14 @@ function display_file_item($file) {
     if ($file_url) {
         $file_metadata = wp_get_attachment_metadata($file_id);
         $filesize = isset($file_metadata['filesize']) ? $file_metadata['filesize'] : 0;
-        $file_name = get_the_title($file_id); // Получение имени файла
+
+        if (!empty( $file['file_description'])) {
+            $file_name = $file['file_description'];
+        } else {
+            $file_name = get_the_title($file_id); // Получение имени файла
+        }
+
+        
         $file_extension = pathinfo($file_url, PATHINFO_EXTENSION); // Получение расширения файла
         ?>
         <a href="<?php echo esc_url($file_url); ?>" class="list-group-item">
@@ -121,9 +128,9 @@ function my_custom_display_files($content) {
 
         if ($files) {
             ?>
-            <div class="border p-4 rounded">
+
             <h4>Прикрепленные файлы</h4>
-            <div class="list-group attached-files-list">
+            <div class="list-group attached-files-list mb-4">
             <?php
             
             foreach ($files as $file) {
@@ -136,26 +143,34 @@ function my_custom_display_files($content) {
 
                     ?>
                         </div>
-                        <div class="list-group attached-files-list mt-4">
-                        <a href="#" class="list-group-item"><?php echo $file['folder']; ?></a>
-
+                        <div class="list-group attached-files-list mb-4">
+                        <div class="list-group-item attached-files-list-header"><?php echo $file['folder']; ?></div>
+                        <div class="list-group-item attached-files-list-content p-4">
+                            <p><?php echo $file['folder_description']; ?></p>
+                            
+                            <div class="list-group">
+                                <?php 
+                                    if (isset( $file['files'])) {
+                                        foreach ($file['files'] as $folders_file) {
+                                            display_file_item($folders_file);
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
                     <?php
 
-                    if (isset( $file['files'])) {
-                        foreach ($file['files'] as $folders_file) {
-                            display_file_item($folders_file);
-                            
-                        }
-                    }
+                    
                 }
                 
                 
             }
             ?>
               </div>  
-              </div> 
+              
             <?php
         }
+
     }
     
 }
@@ -172,3 +187,20 @@ function check_bootstrap_styles() {
     }
 }
 
+
+function enqueue_attached_files_script() {
+    // Получаем путь к файлу attached-files.js
+    $script_path = plugin_dir_url( __FILE__ ) . 'js/attached-files.js';
+
+    // Регистрируем и подключаем скрипт
+    wp_enqueue_script(
+        'attached-files-script',   // Уникальный идентификатор скрипта
+        $script_path,              // URL к файлу скрипта
+        array(),                   // Зависимости (оставляем пустым массивом, если нет зависимостей)
+        null,                      // Версия (можно указать версию файла или null для отключения версионирования)
+        true                       // Загружаем в подвале сайта
+    );
+}
+
+// Хук для подключения скриптов и стилей
+add_action('wp_enqueue_scripts', 'enqueue_attached_files_script');

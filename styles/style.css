@@ -64,3 +64,30 @@
     right: 20px;
     color: #456;
 }
+
+.attached-files-list-content {
+    display: none!important;
+    
+}
+
+
+.attached-files-list-header {
+    cursor: pointer;
+    padding: 18px 20px 18px!important;
+    border-radius: .375rem;
+}
+
+.attached-files-list-content {
+    display: none; /* Скрываем элемент по умолчанию */
+    overflow: hidden; /* Это нужно для работы с высотой элемента */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Добавляем плавный переход для высоты и непрозрачности */
+    max-height: 0; /* Устанавливаем начальную высоту в 0 */
+    opacity: 0; /* Устанавливаем начальную непрозрачность в 0 */
+}
+
+.attached-files-list-content.show {
+    display: block!important; /* Показываем элемент */
+    max-height: 1000px; /* Устанавливаем большую максимальную высоту */
+    opacity: 1; /* Устанавливаем непрозрачность */
+}
+
