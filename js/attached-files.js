@@ -5,20 +5,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // Проходимся по каждому элементу и добавляем обработчик события клика
     headers.forEach(function(header) {
         header.addEventListener("click", function() {
+            const header = this;
             const content = this.nextElementSibling;
             if (content.classList.contains("show")) {
+                header.classList.remove("active");
                 content.classList.remove("show");
                 // Ждем завершения анимации, чтобы скрыть элемент
                 setTimeout(() => {
                     content.style.display = "none";
-                }, 500); // Должно совпадать с временем transition из CSS
+                }, 300); // Должно совпадать с временем transition из CSS
             } else {
                 content.style.display = "block";
                 // Небольшая задержка для запуска анимации
                 setTimeout(() => {
+                    header.classList.add("active");
                     content.classList.add("show");
                 }, 10);
             }
         });
     });
 });
+
+
