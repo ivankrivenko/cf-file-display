@@ -1,20 +1,58 @@
 .attached-files-list {
-   
+   margin-bottom: 20px;
 }
 
-
-
-.list-group-item {
+.attached-files-list-item {
     background-color: transparent!important;
     opacity: .85;
+    display: block;
+    border:1px solid #ccc;
+    border-bottom: none;
+    position: relative;
 }
 
-.list-group-item:hover {
+.attached-files-list-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.attached-files-list-item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom:1px solid #ccc;
+}
+.attached-files-list-header {
+    border:1px solid #ccc;
+    cursor: pointer;
+    padding: 18px 20px 18px;
+    border-radius: .375rem;
+    position: relative;
+}
+
+.attached-files-list-header.active {
+    border-radius: 5px 5px 0 0;
+}
+
+.attached-files-list-header::after {
     
+    content: url('/wp-content/plugins/offt-carbon-upload/img/icon-right-arrow.svg');
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: .3s;
+    width: 16px;
+    height: 16px;
+    opacity: .5;
+}
+
+.attached-files-list-header.active::after {
+    transform: rotate(-180deg);
+}
+
+.attached-files-list-item:hover {
     opacity: 1;
 }
 
-.list-group-item:nth-child(odd){
+.attached-files-list-item:nth-child(odd){
     background: #f9f9f9!important;
 }
 
@@ -33,29 +71,34 @@
 } 
 
 .attached-files-list a{
-    padding: 18px 20px 18px 90px;
+    padding: 18px 20px 18px 100px;
     color: #456;
 }
 
 .attached-files-list a[href$=".pdf"]::before{
     background: #ffcccc;
     content: "pdf";
+    color: #300;
 }
 .attached-files-list a[href$=".xlsx"]::before{
     background: #ccffcc;
     content: "xlsx";
+    color: #030;
 }
 .attached-files-list a[href$=".xls"]::before{
     background: #ccffcc;
     content: "xls ↓";
+    color: #030;
 }
 .attached-files-list a[href$=".docx"]::before{
     background: #ccffff;
     content: "docx";
+    color: #023;
 }
 .attached-files-list a[href$=".doc"]::before{
     background: #ccffff;
     content: "doc ↓";
+    color: #023;
 }
 
 
@@ -65,29 +108,26 @@
     color: #456;
 }
 
-.attached-files-list-content {
-    display: none!important;
-    
-}
-
-
-.attached-files-list-header {
-    cursor: pointer;
-    padding: 18px 20px 18px!important;
-    border-radius: .375rem;
-}
 
 .attached-files-list-content {
-    display: none; /* Скрываем элемент по умолчанию */
-    overflow: hidden; /* Это нужно для работы с высотой элемента */
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Добавляем плавный переход для высоты и непрозрачности */
-    max-height: 0; /* Устанавливаем начальную высоту в 0 */
-    opacity: 0; /* Устанавливаем начальную непрозрачность в 0 */
+    display: none;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; 
+    max-height: 0; 
+    opacity: 0; 
 }
 
 .attached-files-list-content.show {
-    display: block!important; /* Показываем элемент */
-    max-height: 1000px; /* Устанавливаем большую максимальную высоту */
-    opacity: 1; /* Устанавливаем непрозрачность */
+    display: block; 
+    max-height: 1000px; 
+    opacity: 1; 
 }
 
+.attached-files-list-content .attached-files-list {
+    margin-bottom: 0;
+}
