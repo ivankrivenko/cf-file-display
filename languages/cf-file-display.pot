@@ -1,0 +1,86 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CF File Display\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-20 02:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.9; wp-6.5.4\n"
+"X-Domain: cf-file-display"
+
+#: cf-file-display.php:55 cf-file-display.php:65 cf-file-display.php:147
+msgid "Attached files"
+msgstr ""
+
+#: cf-file-display.php:87
+msgid "B"
+msgstr ""
+
+#. Name of the plugin
+msgid "CF File Display"
+msgstr ""
+
+#: cf-file-display.php:37
+msgid ""
+"CF File Display Plugin requires the Carbon Fields plugin to be active. "
+"Please activate Carbon Fields to use this plugin."
+msgstr ""
+
+#: cf-file-display.php:66 cf-file-display.php:68 cf-file-display.php:73
+#: cf-file-display.php:75
+msgid "File"
+msgstr ""
+
+#: cf-file-display.php:67 cf-file-display.php:74
+msgid "File description"
+msgstr ""
+
+#: cf-file-display.php:62
+msgid "Folder"
+msgstr ""
+
+#: cf-file-display.php:64
+msgid "Folder description"
+msgstr ""
+
+#: cf-file-display.php:63
+msgid "Folder name"
+msgstr ""
+
+#: cf-file-display.php:90
+msgid "GB"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://example.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Ivan Krivenko"
+msgstr ""
+
+#: cf-file-display.php:88
+msgid "KB"
+msgstr ""
+
+#: cf-file-display.php:89
+msgid "MB"
+msgstr ""
+
+#: cf-file-display.php:91
+msgid "TB"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Uploading and displaying a list of files in posts and static pages based on "
+"Carbon Fields"
+msgstr ""

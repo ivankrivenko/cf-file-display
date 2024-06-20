@@ -6,9 +6,13 @@
     background-color: transparent!important;
     opacity: .85;
     display: block;
-    border:1px solid #ccc;
+    border:1px solid #e4e4e4;
     border-bottom: none;
     position: relative;
+}
+
+a.attached-files-list-item {
+    text-decoration: none!important;
 }
 
 .attached-files-list-item:first-child {
@@ -18,34 +22,49 @@
 .attached-files-list-item:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #e4e4e4;
 }
 .attached-files-list-header {
-    border:1px solid #ccc;
+    border:1px solid #e4e4e4;
     cursor: pointer;
-    padding: 18px 20px 18px;
+    padding: 18px 20px 18px 50px;
     border-radius: .375rem;
     position: relative;
+    background: #fff;
 }
+
+.attached-files-list-header::before {
+    content: url('/wp-content/plugins/cf-file-display/img/icon-folder.svg');
+    position: absolute;
+    left: 20px;
+    width: 20px;
+    opacity: .5;
+}
+
 
 .attached-files-list-header.active {
     border-radius: 5px 5px 0 0;
 }
 
+.attached-files-list-header.active::before {
+    content: url('/wp-content/plugins/cf-file-display/img/icon-folder-open.svg');
+}
+
 .attached-files-list-header::after {
     
-    content: url('/wp-content/plugins/offt-carbon-upload/img/icon-right-arrow.svg');
+    content: url('/wp-content/plugins/cf-file-display/img/icon-right-arrow.svg');
     position: absolute;
     right: 20px;
-    top: 20px;
     transition: .3s;
     width: 16px;
-    height: 16px;
+height: 16px;
     opacity: .5;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 .attached-files-list-header.active::after {
-    transform: rotate(-180deg);
+    transform: translate(0, -50%) rotate(-180deg);
 }
 
 .attached-files-list-item:hover {
@@ -53,7 +72,7 @@
 }
 
 .attached-files-list-item:nth-child(odd){
-    background: #f9f9f9!important;
+    background: #fff!important;
 }
 
 .attached-files-list a::before{
@@ -68,6 +87,8 @@
     font-size: 12px;
     width: 60px;
     text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
 } 
 
 .attached-files-list a{
@@ -78,27 +99,27 @@
 .attached-files-list a[href$=".pdf"]::before{
     background: #ffcccc;
     content: "pdf";
-    color: #300;
+    color: #a36;
 }
 .attached-files-list a[href$=".xlsx"]::before{
     background: #ccffcc;
     content: "xlsx";
-    color: #030;
+    color: #3a6;
 }
 .attached-files-list a[href$=".xls"]::before{
     background: #ccffcc;
     content: "xls ↓";
-    color: #030;
+    color: #3a6;
 }
 .attached-files-list a[href$=".docx"]::before{
     background: #ccffff;
     content: "docx";
-    color: #023;
+    color: #38a;
 }
-.attached-files-list a[href$=".doc"]::before{
+.attached-files-list a[href$=".doc"]::before {
     background: #ccffff;
     content: "doc ↓";
-    color: #023;
+    color: #38a;
 }
 
 
@@ -114,7 +135,7 @@
     padding: 20px;
     border-radius: 0 0 5px 5px;
     border-top: none;
-    border: 1px solid #ccc;
+    border: 1px solid #e4e4e4;
     border-top: none;
     overflow: hidden;
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out; 
@@ -130,4 +151,8 @@
 
 .attached-files-list-content .attached-files-list {
     margin-bottom: 0;
+}
+
+.main-page-wrapper {
+    background: #f9f9f9!important;
 }
