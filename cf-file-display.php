@@ -1,13 +1,15 @@
 <?php
 /*
 Plugin Name: CF File Display
-Plugin URI:  https://ivankrivenko.ru
+Plugin URI:  https://github.com/ivankrivenko/cf-file-display
 Description: Uploading and displaying a list of files in posts and static pages based on Carbon Fields
 Version:     1.0
 Author:      Ivan Krivenko
 Text Domain: cf-file-display
 Domain Path: /languages
 */
+
+
 if ( ! function_exists( 'is_plugin_active' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
@@ -41,7 +43,7 @@ function cffd_carbon_fields_admin_notice() {
 }
 
 function cffd_deactivate() {
-    // Здесь можно деактивировать основные функции вашего плагина
+    // Здесь можно деактивировать основные функции плагина
     // Например, отменить регистрацию кастомных полей, настроек и т.д.
 }
 
@@ -55,7 +57,7 @@ add_action('carbon_fields_register_fields', 'crb_attach_file');
 function crb_attach_file() {
     Container::make('post_meta', __('Attached files', 'cf-file-display'))
         ->where('post_type', '=', 'page') // Ограничить поля только для страниц
-        
+        ->or_where('post_type', '=', 'page')
         ->add_fields(array(
             Field::make('complex', 'crb_files', __('Files'))
 
@@ -77,12 +79,7 @@ function crb_attach_file() {
                 ))
         ));
 }
-/*
-add_action('after_setup_theme', 'crb_load');
-function crb_load() {
-    \Carbon_Fields\Carbon_Fields::boot();
-}
-*/
+
 function formatBytes($bytes, $precision = 2) {
 
     $byte = __('B', 'cf-file-display');
@@ -136,14 +133,8 @@ add_filter('the_content', 'cffd_display_files');
 function cffd_display_files($content) {
     if (is_page()) { // Проверка, что это страница
 
-
         $files = carbon_get_the_post_meta('crb_files');
 
-        /*
-        echo '<pre>';
-        print_r($files);
-        echo '</pre>';
-        */
         if ($files) {
             ?>
 
@@ -185,17 +176,12 @@ function cffd_display_files($content) {
 
         <div class="attached-files-list">
             <?php 
-                                    if (isset( $file['files'])) {
-                                        foreach ($file['files'] as $folders_file) {
-                                            display_file_item($folders_file);
-
-                                            /*
-                                            if ($folders_file === end($file['files'])) {
-                                                echo " - это последний элемент.\n";
-                                            }*/
-                                        }
-                                    }
-                                ?>
+                if (isset( $file['files'])) {
+                    foreach ($file['files'] as $folders_file) {
+                        display_file_item($folders_file);
+                    }
+                }
+            ?>
         </div>
     </div>
     <?php
@@ -219,12 +205,6 @@ function check_bootstrap_styles() {
 
     wp_enqueue_style( 'attached-files-list', plugin_dir_url( __FILE__ ) . 'styles/style.css' );
 
-    /*
-    if (!wp_style_is('bootstrap', 'enqueued')) {
-        // Если стили Bootstrap не подключены
-        wp_enqueue_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'styles/bootstrap.min.css' );
-    }
-    */
 }
 
 
