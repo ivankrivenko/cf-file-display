@@ -1,5 +1,5 @@
 === CF File Display ===
-Contributors: ivankrivenko
+Contributors: Keyv
 Tags: file, files, upload, display, carbon fields
 Requires at least: 4.7
 Tested up to: 6.2
