@@ -37,6 +37,8 @@ Yes, you can configure the plugin to display files on custom post types by modif
 
 1. **File Upload** - Upload files from the post or page edit screen.
 2. **File Display** - Display files in a structured list on the front end.
+1. **File Display** - Display files in a structured list on the front end.
+2. **File Upload** - Upload files from the post or page edit screen.
 
 == Changelog ==
 
