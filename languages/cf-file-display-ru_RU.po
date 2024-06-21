@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: CF File Display\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-20 02:34+0000\n"
-"PO-Revision-Date: 2024-06-20 02:58+0000\n"
+"PO-Revision-Date: 2024-06-20 23:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Loco-Version: 2.6.9; wp-6.5.4\n"
 "X-Domain: cf-file-display"
 
-#: cf-file-display.php:55 cf-file-display.php:65 cf-file-display.php:147
+#: cf-file-display.php:48 cf-file-display.php:57 cf-file-display.php:117
 msgid "Attached files"
 msgstr "Прикрепленные файлы"
 
-#: cf-file-display.php:87
+#: cf-file-display.php:72
 msgid "B"
 msgstr "Б"
 
@@ -28,57 +28,61 @@ msgstr "Б"
 msgid "CF File Display"
 msgstr "CF File Display"
 
-#: cf-file-display.php:37
+#: cf-file-display.php:33
 msgid ""
 "CF File Display Plugin requires the Carbon Fields plugin to be active. "
 "Please activate Carbon Fields to use this plugin."
 msgstr ""
-"Плагин отображения файлов CF требует, чтобы плагин Carbon Fields был "
-"активным. Пожалуйста, активируйте Carbon Fields, чтобы использовать этот "
+"Плагину CF File Display требуетя, чтобы плагин Carbon Fields был активным. "
+"Пожалуйста, установите и активируйте Carbon Fields, чтобы использовать этот "
 "плагин."
 
-#: cf-file-display.php:66 cf-file-display.php:68 cf-file-display.php:73
-#: cf-file-display.php:75
+#: cf-file-display.php:58 cf-file-display.php:60 cf-file-display.php:63
+#: cf-file-display.php:65
 msgid "File"
 msgstr "Файл"
 
-#: cf-file-display.php:67 cf-file-display.php:74
+#: cf-file-display.php:59 cf-file-display.php:64
 msgid "File description"
 msgstr "Название файла"
 
-#: cf-file-display.php:62
+#: cf-file-display.php:51
+msgid "Files"
+msgstr "Файлы"
+
+#: cf-file-display.php:52
 msgid "Folder"
 msgstr "Папка"
 
-#: cf-file-display.php:64
+#: cf-file-display.php:56
 msgid "Folder description"
 msgstr "Описание папки"
 
-#: cf-file-display.php:63
+#: cf-file-display.php:53
 msgid "Folder name"
 msgstr "Название папки"
 
-#: cf-file-display.php:90
+#: cf-file-display.php:75
 msgid "GB"
 msgstr "Гб"
 
 #. URI of the plugin
-msgid "http://example.com"
+msgid "https://github.com/ivankrivenko/cf-file-display"
 msgstr ""
 
 #. Author of the plugin
 msgid "Ivan Krivenko"
 msgstr ""
 
-#: cf-file-display.php:88
+#: cf-file-display.php:73
 msgid "KB"
 msgstr "Кб"
 
-#: cf-file-display.php:89
+#: cf-file-display.php:74
 msgid "MB"
 msgstr "Мб"
 
-#: cf-file-display.php:91
+#: cf-file-display.php:76
 msgid "TB"
 msgstr "Тб"
 
@@ -87,3 +91,5 @@ msgid ""
 "Uploading and displaying a list of files in posts and static pages based on "
 "Carbon Fields"
 msgstr ""
+"Загрузка и отображение списка файлов в постах и ​​статических страницах на "
+"основе Carbon Fields"

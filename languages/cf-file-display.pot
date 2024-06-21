@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CF File Display\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 02:56+0000\n"
+"POT-Creation-Date: 2024-06-20 23:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Loco-Version: 2.6.9; wp-6.5.4\n"
 "X-Domain: cf-file-display"
 
-#: cf-file-display.php:55 cf-file-display.php:65 cf-file-display.php:147
+#: cf-file-display.php:48 cf-file-display.php:57 cf-file-display.php:117
 msgid "Attached files"
 msgstr ""
 
-#: cf-file-display.php:87
+#: cf-file-display.php:72
 msgid "B"
 msgstr ""
 
@@ -28,54 +28,58 @@ msgstr ""
 msgid "CF File Display"
 msgstr ""
 
-#: cf-file-display.php:37
+#: cf-file-display.php:33
 msgid ""
 "CF File Display Plugin requires the Carbon Fields plugin to be active. "
 "Please activate Carbon Fields to use this plugin."
 msgstr ""
 
-#: cf-file-display.php:66 cf-file-display.php:68 cf-file-display.php:73
-#: cf-file-display.php:75
+#: cf-file-display.php:58 cf-file-display.php:60 cf-file-display.php:63
+#: cf-file-display.php:65
 msgid "File"
 msgstr ""
 
-#: cf-file-display.php:67 cf-file-display.php:74
+#: cf-file-display.php:59 cf-file-display.php:64
 msgid "File description"
 msgstr ""
 
-#: cf-file-display.php:62
+#: cf-file-display.php:51
+msgid "Files"
+msgstr ""
+
+#: cf-file-display.php:52
 msgid "Folder"
 msgstr ""
 
-#: cf-file-display.php:64
+#: cf-file-display.php:56
 msgid "Folder description"
 msgstr ""
 
-#: cf-file-display.php:63
+#: cf-file-display.php:53
 msgid "Folder name"
 msgstr ""
 
-#: cf-file-display.php:90
+#: cf-file-display.php:75
 msgid "GB"
 msgstr ""
 
 #. URI of the plugin
-msgid "http://example.com"
+msgid "https://github.com/ivankrivenko/cf-file-display"
 msgstr ""
 
 #. Author of the plugin
 msgid "Ivan Krivenko"
 msgstr ""
 
-#: cf-file-display.php:88
+#: cf-file-display.php:73
 msgid "KB"
 msgstr ""
 
-#: cf-file-display.php:89
+#: cf-file-display.php:74
 msgid "MB"
 msgstr ""
 
-#: cf-file-display.php:91
+#: cf-file-display.php:76
 msgid "TB"
 msgstr ""
 
