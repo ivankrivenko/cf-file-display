@@ -1,6 +1,7 @@
 === CF File Display ===
 Contributors: Keyv
 Tags: file, files, upload, display, carbon fields
+Requires PHP: 5.6
 Requires at least: 4.7
 Tested up to: 6.2
 Stable tag: 1.0
@@ -21,9 +22,9 @@ CF File Display allows you to upload and display a list of files in posts and st
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/cf-file-display` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Configure the plugin settings under the 'Settings' menu in the WordPress admin panel.
+1. Make sure the Carbon Fields plugin is activated.
+2. Upload the plugin files to the `/wp-content/plugins/cf-file-display` directory, or install the plugin through the WordPress plugins screen directly.
+3. Activate the plugin through the 'Plugins' screen in WordPress.
 
 == Frequently Asked Questions ==
 
@@ -31,14 +32,13 @@ CF File Display allows you to upload and display a list of files in posts and st
 You can upload files directly from the post or page edit screen where the Carbon Fields are displayed.
 
 = Can I display files on custom post types? =
-Yes, you can configure the plugin to display files on custom post types by modifying the plugin settings.
+No. The plugin is configured to work only with post and page post types.
 
 == Screenshots ==
 
-1. **File Upload** - Upload files from the post or page edit screen.
-2. **File Display** - Display files in a structured list on the front end.
 1. **File Display** - Display files in a structured list on the front end.
 2. **File Upload** - Upload files from the post or page edit screen.
+
 
 == Changelog ==
 
