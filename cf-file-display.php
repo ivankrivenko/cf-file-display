@@ -30,7 +30,7 @@ add_action('admin_init', 'cffd_check_carbon_fields');
 function cffd_carbon_fields_admin_notice() {
     ?>
 <div class="notice notice-error">
-    <p><?php _e('CF File Display Plugin requires the <a href="https://carbonfields.net/release-archive/" target="_blank">Carbon Fields plugin</a> to be active. Please activate Carbon Fields to use this plugin.', 'cf-file-display'); ?>
+    <p><?php esc_html_e('CF File Display Plugin requires the <a href="https://carbonfields.net/release-archive/" target="_blank">Carbon Fields plugin</a> to be active. Please activate Carbon Fields to use this plugin.', 'cf-file-display'); ?>
     </p>
 </div>
 <?php
@@ -99,7 +99,7 @@ function display_file_item($file) {
 <a href="<?php echo esc_url($file_url); ?>" target="_blank" class="attached-files-list-item">
     <?php echo esc_html($file_name); ?>
     <?php if ($filesize != 0) { ?>
-    <span class="attached-file-extension"><?php echo formatBytes($filesize); ?></span>
+    <span class="attached-file-extension"><?php echo esc_html(formatBytes($filesize)); ?></span>
     <?php } ?>
 </a>
 <?php
@@ -114,7 +114,7 @@ function cffd_display_files($content) {
         if ($files) {
             ob_start();
             ?>
-<h4><?php echo __('Attached files', 'cf-file-display'); ?></h4>
+<h4><?php echo esc_html__('Attached files', 'cf-file-display'); ?></h4>
 <div class="attached-files-list">
     <?php
             $folder = false;
@@ -165,16 +165,10 @@ function cffd_display_files($content) {
 
 add_action('wp_enqueue_scripts', 'check_bootstrap_styles');
 function check_bootstrap_styles() {
-    wp_enqueue_style('attached-files-list', plugin_dir_url(__FILE__) . 'styles/style.css');
+    wp_enqueue_style('attached-files-list', plugin_dir_url(__FILE__) . 'styles/style.css', array(), '1.0.0');
 }
 
 function enqueue_attached_files_script() {
-    wp_enqueue_script(
-        'attached-files-script',
-        plugin_dir_url(__FILE__) . 'js/attached-files.js',
-        array(),
-        null,
-        true
-    );
+    wp_enqueue_script ('attached-files-script', plugin_dir_url(__FILE__) . 'js/attached-files.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_attached_files_script');
